@@ -14,7 +14,7 @@
                 "graph": {
                     "name": "classifier",
                     "implementation": "SKLEARN_SERVER",
-                    "modelUri": "gs://seldon-models/sklearn/iris"
+                    "modelUri": "gs://seldon-models/sklearn/income/model"
                 },
                 "replicas": 1,
                 "engineResources": {},
