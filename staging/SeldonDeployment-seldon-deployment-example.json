@@ -13,11 +13,42 @@
                 "name": "default",
                 "graph": {
                     "name": "classifier",
+                    "type": "UNKNOWN_TYPE",
                     "implementation": "SKLEARN_SERVER",
+                    "endpoint": {
+                        "service_host": "localhost",
+                        "service_port": 9000,
+                        "type": "REST"
+                    },
                     "modelUri": "gs://seldon-models/sklearn/iris"
                 },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "classifier",
+                                    "image": "seldonio/sklearnserver_rest:0.2",
+                                    "resources": {},
+                                    "volumeMounts": [
+                                        {
+                                            "name": "podinfo",
+                                            "mountPath": "/etc/podinfo"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
                 "replicas": 1,
                 "engineResources": {},
+                "labels": {
+                    "version": "default"
+                },
                 "svcOrchSpec": {},
                 "explainer": {
                     "containerSpec": {
