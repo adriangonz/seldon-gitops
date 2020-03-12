@@ -34,7 +34,7 @@
                             "containers": [
                                 {
                                     "name": "classifier",
-                                    "image": "seldonio/sklearnserver_rest:0.3",
+                                    "image": "seldonio/sklearnserver_rest:0.4",
                                     "resources": {},
                                     "volumeMounts": [
                                         {
