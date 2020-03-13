@@ -7,20 +7,23 @@
         "creationTimestamp": null
     },
     "spec": {
+        "name": "seldon-deployment-example",
         "predictors": [
             {
                 "name": "seldon-deployment-example",
-                "graph": null,
+                "graph": {
+                    "name": "seldon-deployment-example",
+                    "type": "MODEL"
+                },
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "name": "seldon-deployment-example",
                             "creationTimestamp": null
                         },
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "",
+                                    "name": "seldon-deployment-example",
                                     "image": "seldonio/sklearnserver_rest:0.2",
                                     "resources": {}
                                 }
