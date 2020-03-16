@@ -24,7 +24,7 @@
                             "containers": [
                                 {
                                     "name": "seldon-deployment-example",
-                                    "image": "seldonio/sklearnserver_rest:0.2",
+                                    "image": "seldonio/fixed-model:0.2",
                                     "resources": {}
                                 }
                             ]
