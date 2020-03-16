@@ -1,0 +1,47 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "metadata": {
+        "name": "seldon-deployment-example",
+        "namespace": "staging",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "seldon-deployment-example",
+        "predictors": [
+            {
+                "name": "seldon-deployment-example",
+                "graph": {
+                    "name": "seldon-deployment-example",
+                    "type": "MODEL"
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "seldon-deployment-example",
+                                    "image": "seldonio/sklearnserver_rest:0.2",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "explainer": {
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
+            }
+        ]
+    },
+    "status": {}
+}
