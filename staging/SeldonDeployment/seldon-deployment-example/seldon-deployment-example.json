@@ -24,28 +24,14 @@
                             "containers": [
                                 {
                                     "name": "model",
-                                    "image": "seldonio/fixed-model:0.2",
-                                    "env": [
-                                        {
-                                            "name": "FOO",
-                                            "value": "BAR"
-                                        },
-                                        {
-                                            "name": "FOO2",
-                                            "value": "BAR2"
-                                        },
-                                        {
-                                            "name": "FOO3",
-                                            "value": "BAR3"
-                                        }
-                                    ],
+                                    "image": "seldonio/fixed-model:0.3",
                                     "resources": {}
                                 }
                             ]
                         }
                     }
                 ],
-                "replicas": 2,
+                "replicas": 1,
                 "engineResources": {},
                 "svcOrchSpec": {},
                 "explainer": {
