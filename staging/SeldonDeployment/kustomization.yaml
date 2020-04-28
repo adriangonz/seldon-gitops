@@ -1,8 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-  - seldon-deployment-example
+resources:
+  - seldon-deployment-example/seldon-deployment-example.json
+  - seldon-deployment-example-2/seldon-deployment-example-2.json
+  - seldon-deployment-example-3/seldon-deployment-example-3.json
 
 patches:
   - path: overlays/hpa-spec.json
