@@ -4,10 +4,9 @@ kind: Kustomization
 bases:
   - seldon-deployment-example
 
-patchesJson6902:
+patches:
   - path: overlays/hpa-spec.json
     target:
       group: machinelearning.seldon.io
       version: v1
       kind: SeldonDeployment
-      name: seldon-deployment-example
