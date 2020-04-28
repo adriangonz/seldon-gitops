@@ -1,0 +1,19 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/predictors/0/componentSpecs/0/hpaSpec",
+    "value": {
+      "maxReplicas": 3,
+      "metrics": [
+        {
+          "resource": {
+            "name": "cpu",
+            "targetAverageUtilization": 10
+          },
+          "type": "Resource"
+        }
+      ],
+      "minReplicas": 1
+    }
+  }
+]
