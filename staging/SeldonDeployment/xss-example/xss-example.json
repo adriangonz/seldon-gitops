@@ -16,7 +16,7 @@
             "spec": {
               "containers": [
                 {
-                  "image": "xss-model:0.1",
+                  "image": "adriangonz/xss-model:0.3",
                   "imagePullPolicy": "IfNotPresent",
                   "name": "xss-model"
                 }
