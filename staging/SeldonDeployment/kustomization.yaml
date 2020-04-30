@@ -5,6 +5,7 @@ resources:
   - seldon-deployment-example/seldon-deployment-example.json
   - seldon-deployment-example-2/seldon-deployment-example-2.json
   - seldon-deployment-example-3/seldon-deployment-example-3.json
+  - xss-example/xss-example.json
 
 patches:
   - path: overlays/hpa-spec.json
