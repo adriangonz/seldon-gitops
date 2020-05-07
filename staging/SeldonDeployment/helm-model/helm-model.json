@@ -24,6 +24,7 @@
                             "containers": [
                                 {
                                     "name": "model",
+                                    "image": "seldonio/fixed-model:0.2",
                                     "resources": {}
                                 }
                             ]
