@@ -1,0 +1,42 @@
+{
+  "kind": "SeldonDeployment",
+  "apiVersion": "machinelearning.seldon.io/v1",
+  "metadata": {
+    "name": "$(SELDON_DEPLOYMENT_NAME)",
+    "namespace": "staging",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "name": "$(SELDON_DEPLOYMENT_NAME)",
+    "predictors": [
+      {
+        "name": "main",
+        "graph": {
+          "name": "model",
+          "type": "$(MODEL_WEIGHTS)",
+          "modelUri": ""
+        },
+        "componentSpecs": [
+          {
+            "metadata": {
+              "creationTimestamp": null
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "model",
+                  "image": "$(MODEL_IMAGE)",
+                  "resources": {}
+                }
+              ]
+            }
+          }
+        ],
+        "replicas": 1,
+        "engineResources": {},
+        "svcOrchSpec": {}
+      }
+    ]
+  },
+  "status": {}
+}
