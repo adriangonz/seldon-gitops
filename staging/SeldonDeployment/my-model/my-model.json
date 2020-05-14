@@ -1,22 +1,37 @@
 {
     "kind": "SeldonDeployment",
-    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "apiVersion": "machinelearning.seldon.io/v1",
     "metadata": {
         "name": "my-model",
         "namespace": "staging",
         "creationTimestamp": null
     },
     "spec": {
-        "name": "iris-deployment",
+        "name": "sdep-example",
         "predictors": [
             {
-                "name": "default",
+                "name": "main",
                 "graph": {
-                    "name": "classifier",
-                    "implementation": "SKLEARN_SERVER",
-                    "modelUri": "gs://seldon-models/sklearn/iris"
+                    "name": "model",
+                    "type": "MODEL"
                 },
-                "replicas": 1,
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "model",
+                                    "image": "seldonio/fixed-model:0.2",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 2,
                 "engineResources": {},
                 "svcOrchSpec": {}
             }
