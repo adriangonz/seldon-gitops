@@ -7,7 +7,7 @@
         "creationTimestamp": null
     },
     "spec": {
-        "name": "sdep-example",
+        "name": "my-model",
         "predictors": [
             {
                 "name": "main",
