@@ -25,6 +25,12 @@
                                 {
                                     "name": "model",
                                     "image": "seldonio/fixed-model:0.2",
+                                    "env": [
+                                        {
+                                            "name": "FOO",
+                                            "value": "bar"
+                                        }
+                                    ],
                                     "resources": {}
                                 }
                             ]
