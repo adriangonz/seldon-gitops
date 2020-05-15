@@ -31,7 +31,11 @@
                                             "value": "bar"
                                         }
                                     ],
-                                    "resources": {}
+                                    "resources": {
+                                        "requests": {
+                                            "cpu": "500m"
+                                        }
+                                    }
                                 }
                             ]
                         },
