@@ -1,60 +1,21 @@
 {
     "kind": "SeldonDeployment",
-    "apiVersion": "machinelearning.seldon.io/v1",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
         "name": "my-model",
         "namespace": "staging",
         "creationTimestamp": null
     },
     "spec": {
-        "name": "my-model",
+        "name": "iris-deployment",
         "predictors": [
             {
-                "name": "main",
+                "name": "default",
                 "graph": {
-                    "name": "model",
-                    "type": "MODEL"
+                    "name": "classifier",
+                    "implementation": "SKLEARN_SERVER",
+                    "modelUri": "gs://seldon-models/sklearn/iris"
                 },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": null
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "model",
-                                    "image": "seldonio/fixed-model:0.2",
-                                    "env": [
-                                        {
-                                            "name": "FOO",
-                                            "value": "bar"
-                                        }
-                                    ],
-                                    "resources": {
-                                        "requests": {
-                                            "cpu": "500m",
-                                            "memory": "100Mi"
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        "hpaSpec": {
-                            "minReplicas": 1,
-                            "maxReplicas": 5,
-                            "metrics": [
-                                {
-                                    "type": "Resource",
-                                    "resource": {
-                                        "name": "cpu",
-                                        "targetAverageUtilization": 10
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                ],
                 "replicas": 1,
                 "engineResources": {},
                 "svcOrchSpec": {}
